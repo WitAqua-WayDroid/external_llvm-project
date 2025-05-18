@@ -74,11 +74,13 @@ llvm_defaults {
         linux: {
             cppflags: ["-Woverloaded-virtual"],
 
-            // Add on ncurses to have support for terminfo
             host_ldlibs: [
                 "-ldl",
-                "-lncurses",
                 "-lgcc_s",
+            ],
+            // Add on ncurses to have support for terminfo
+            shared_libs: [
+                "libncurses",
             ],
         },
         darwin: {
